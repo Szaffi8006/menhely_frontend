@@ -17,6 +17,7 @@ import { HowitworksComponent } from './pages/information/howitworks/howitworks.c
 import { AuthComponent } from './auth/auth.component';
 import { CatProfileComponent } from './pages/animals/cats/cat-profile/cat-profile.component'; // Csak ha közvetlenül itt is használni akarod
 import { DogProfileComponent } from './pages/animals/dogs/dog-profile/dog-profile.component';
+import { UsersComponent } from './users/users.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { DogProfileComponent } from './pages/animals/dogs/dog-profile/dog-profil
     AppComponent,
     AuthComponent,
     CatProfileComponent,
-    DogProfileComponent
+    DogProfileComponent,
+    UsersComponent
 
     // Ide csak azokat a komponenseket rakd, amelyeket itt használni szeretnél közvetlenül
     // Ha a ProfileModule-ban van deklarálva, nem kell itt deklarálni

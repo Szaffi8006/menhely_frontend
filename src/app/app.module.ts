@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -17,7 +17,12 @@ import { HowitworksComponent } from './pages/information/howitworks/howitworks.c
 import { AuthComponent } from './auth/auth.component';
 import { CatProfileComponent } from './pages/animals/cats/cat-profile/cat-profile.component'; // Csak ha közvetlenül itt is használni akarod
 import { DogProfileComponent } from './pages/animals/dogs/dog-profile/dog-profile.component';
-import { UsersComponent } from './users/users.component';
+
+
+
+  const routes: Routes = [
+    {path:"register", component:AuthComponent},
+  ];
 
 
 @NgModule({
@@ -26,7 +31,7 @@ import { UsersComponent } from './users/users.component';
     AuthComponent,
     CatProfileComponent,
     DogProfileComponent,
-    UsersComponent
+
 
     // Ide csak azokat a komponenseket rakd, amelyeket itt használni szeretnél közvetlenül
     // Ha a ProfileModule-ban van deklarálva, nem kell itt deklarálni
@@ -35,16 +40,18 @@ import { UsersComponent } from './users/users.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, // Az AppRoutingModule-ot nem szabad törölni, ha routing van
-    RouterModule, // A router-t is importálni kell
-   // Az összes szükséges modul importálása
+    AppRoutingModule,
+    RouterModule.forRoot([]),
+
     InformationModule,
     AnimalsModule,
     FormsModule,
     HttpClientModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+
+
